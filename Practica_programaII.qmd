@@ -1,0 +1,53 @@
+---
+title: "Práctica programada II"
+author: "Katherine Gómez"
+format: 
+  html:
+    code-fold: true
+    theme: cosmo
+---
+
+## Visualización de datos en Seaborn
+
+```{python}
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Cargar el dataset tips
+tips = sns.load_dataset("titanic")
+```
+
+```{python}
+#| label: fig-boxplot
+#| fig-cap: "Distribución de la cuenta total por día de la semana"
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x="pclass", data=titanic)
+plt.title("Conteo de pasajeros por clase")
+plt.show()
+```
+
+```{python}
+#| label: fig-scatterplot
+#| fig-cap: "Relación entre cuenta total y propina, por hora del día"
+
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x="age", y="fare", hue="pclass", style="sex", data=titanic)
+plt.title("Relación entre Edad y Precio del Billete")
+plt.show()
+```
+
+```{python}
+#| label: fig-histogram
+#| fig-cap: "Distribución de las propinas"
+
+plt.figure(figsize=(10, 6))
+sns.histplot(data=titanic, x="age", kde=True)
+plt.title("Distribución de la Edad de los pasajeros")
+plt.show()
+```
+
+### Reflexión
+1. Los gráficos son muy interesantes a la hora de visualizarlos, lo que hace que sean muy entretenidos.
+2. La parte de hacer un documento pdf en el bash es muy estresante.
+3. Todavía me siento un poco confundida con el tema. Por eso no hay que faltar a clases. jajajajajaja
